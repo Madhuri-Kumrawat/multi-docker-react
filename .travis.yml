@@ -10,14 +10,14 @@ before_install:
 script:
   - docker run -e CI=true mady/multi-docker-react-test npm run test
 after_success:
-  - docker build -t mady/multi-docker-client ./client
-  - docker build -t mady/multi-docker-nginx ./nginx
-  - docker build -t mady/multi-docker-server ./server
-  - docker build -t mady/multi-docker-worker ./worker
+  - docker build -t madykc/multi-docker-client ./client
+  - docker build -t madykc/multi-docker-nginx ./nginx
+  - docker build -t madykc/multi-docker-server ./server
+  - docker build -t madykc/multi-docker-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   ### Take Those images and push to DockerHub
-  - docker push mady/multi-docker-client
-  - docker push mady/multi-docker-nginx
-  - docker push mady/multi-docker-server
-  - docker push mady/multi-docker-worker
+  - docker push madykc/multi-docker-client
+  - docker push madykc/multi-docker-nginx
+  - docker push madykc/multi-docker-server
+  - docker push madykc/multi-docker-worker
