@@ -20,3 +20,4 @@ after_success:
   - docker push mady/multi-docker-nginx
   - docker push mady/multi-docker-server
   - docker push mady/multi-docker-worker
+  
